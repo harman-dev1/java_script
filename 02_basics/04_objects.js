@@ -46,10 +46,24 @@ const user = [
 ] 
 
 user[1].email;
-console.log(tinderUser);
-console.log(Object.keys(tinderUser)); // data type is array
-console.log(Object.values(tinderUser)); // data type is array
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser)); // data type is array
+// console.log(Object.values(tinderUser)); // data type is array
 
-console.log(Object.entries(tinderUser)); // each key value converts in to array :[ [ 'id', '123abc' ], [ 'name', 'harman' ], [ 'isLoggedIn', false ] ]
+// console.log(Object.entries(tinderUser)); // each key value converts in to array :[ [ 'id', '123abc' ], [ 'name', 'harman' ], [ 'isLoggedIn', false ] ]
 
-console.log(tinderUser.hasOwnProperty("isLoggedIn")); // property is available or not
+// console.log(tinderUser.hasOwnProperty("isLoggedIn")); // property is available or not
+
+
+//Object De-struture
+const course = {
+    courseName :"Js",
+    price : "99",
+    courseInstructor :"Hitesh",
+}
+
+console.log(course.courseInstructor)
+const {courseInstructor } = course // can also access like this
+const {courseInstructor : instructor } = course // can destructure 
+console.log(instructor)
+ 
