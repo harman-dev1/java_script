@@ -32,7 +32,7 @@ const myObject = {
     game2 :"GTA 5"
 }
 
-for (const [object] of myObject) { // myObject is not iterateable
+for (const [object] of myObject) { // myObject is not iterateable through for of
     console.log(object);
     
 }
