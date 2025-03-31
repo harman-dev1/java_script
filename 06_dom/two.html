@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai Aur Code </title>
+</head>
+<body style="background-color: #212121; color: white";>
+    <div class="parent">
+        <div class="day">Monday</div><!-- in dom even one new line if you add new line in same line it will consider one text cosider or i have added this comment this will be comsider text as text that's why this 'console.log("Nodes :", parent.childNodes)' 10 nodes-->
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent); 
+    // console.log(parent.children);// from this we can get children of parent
+    for (let i = 0; i < parent.children.length; i++) {
+    //   console.log(parent.children[i].innerHTML);        
+    }
+    // console.log(parent.firstElementChild.innerHTML );    // it will give first element child
+    // console.log(parent.lastElementChild.innerHTML ); // it will give last element child
+
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne.parentElement);// it will give parent of selected children
+    // console.log(dayOne.nextElementSibling)
+    
+    console.log("Nodes :", parent.childNodes)
+</script>
+</html>

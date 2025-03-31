@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body style="background-color: #212121; color: white";>
+    
+</body>
+<script>
+    const div = document.createElement('div'); // this will create a element and will store it in 'div'
+    // now we want to add properties in this div
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1) // these two are available by default but we can add custom attributes
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    // div.innerText = "chai aur code"// we can add inner text like this but it will first select that text and then overwrite it
+    const addText = document.createTextNode("chai aur code")
+    div.appendChild(addText)
+    // we can aslo add text like this
+    console.log(div);   
+    document.body.appendChild(div)//now by this we can display our script in live server  
+
+    const createNewElement = (text, color, index) => {
+        const div = document.createElement("div");
+        div.className = "main";
+        div.id = Math.round(Math.random() * 10 + 1);
+        div.setAttribute("title", "generated title");
+        div.style.backgroundColor = color;
+        const txt = document.createTextNode(text);        
+        div.appendChild(txt);
+        console.log(div.childNodes);
+        document.body.appendChild(div)
+    }
+    
+    const colorArr = ["green", "black", "white", "red", "yellow", "orange"]
+    const text = ["harman", "ali", "hussain", "ahamd" , "zain", "saqlain"]
+    text.map( (txt, index) => {
+        createNewElement(txt, colorArr[index], index)
+    } )
+    
+    
+</script>
+</html>
