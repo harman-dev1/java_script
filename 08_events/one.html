@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color : #414141; color: white;">
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = (() => {
+    //     alert('owl clicked!') //this approach is not good .onclick don't provide enough information in case of problem in 'id' we should use eventListener 
+    // })
+
+    //attachEvent ; this can also be use for events
+    //Jquery -on (this on use for click event jQuery used before react )
+
+//     document.getElementById('images').addEventListener('click', ((e)=> {
+//         // alret('owl clicked again!')
+//         console.log("clicked inside");
+//     }), false ) // if we use event capturing whihch means using true then event of parent willl be called first then child
+
+//     // document.getElementById('owl').addEventListener('click', ((e)=> {//if we use false then this is called bubbeling bubble from below go to above this is called event propogation
+//     //     // alret('owl clicked again!')
+//     //     console.log('clicked owl '); 
+//     // }), false ) // if you know owl is also inside the ul then which msg willl display forst clicked inside or clicked owl; you'll see clicked owl will be display first and then click inside
+
+//     document.getElementById('owl').addEventListener('click', ((e)=> {//if we use false then this is called bubbeling bubble from below go to above this is called event propogation
+//         // alret('owl clicked again!')
+//         console.log('clicked owl '); 
+//         e.stopPropagation()// now propogation will be stopped event will be bubbled and will not go to above 
+//     }), false )
+
+//     //types of event; timeStamped; defaultPrevented(you can change default behaviour of events); target; toElement; srcElement; currenttarget; clientX clientY
+//     //screenX; screenY
+//     //altKey; crtlKey; shiftKey; // wee can check which key of keyboard key is selected through events!
+
+//    document.getElementById('google').addEventListener('click', (e) => {
+//     console.log('google clicked!!')
+//     console.log(e.target.tagName);
+//     e.preventDefault();
+//     e.stopPropagation();
+
+//    }, false);
+    document.querySelector('#images').addEventListener('click', (e) => {
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode;
+        // removeIt.remove();
+            removeIt.parentNode.removeChild(removeIt);//
+        } else if(e.target.tagName === 'A') {
+            e.preventDefault();
+        }
+        
+        
+        
+    }, false);
+</script>
+</html>
